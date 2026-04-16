@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  cuda-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: me759-linear-solvers:latest
+    container_name: me759-linear-solvers-dev
+    volumes:
+      - ./repo759:/workspace/repo759
+      - ./data:/workspace/data
+      - ./build:/workspace/build
+    working_dir: /workspace/repo759
+    stdin_open: true
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - CUDA_VISIBLE_DEVICES=0
+    command: /bin/bash
+
