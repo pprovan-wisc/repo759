@@ -41,9 +41,6 @@ RUN cd /tmp && \
 # Create working directory
 WORKDIR /workspace
 
-# Create project directories
-RUN mkdir -p /workspace/repo759
-
 # Set up entry point
 CMD ["/bin/bash"]
 
