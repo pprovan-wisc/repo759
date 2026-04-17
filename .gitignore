@@ -1,0 +1,45 @@
+# Build directories
+build/
+dist/
+*.o
+*.a
+*.so
+*.dylib
+
+# CUDA compiled objects
+*.cu.o
+*.ptx
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Output files
+benchmark_results.csv
+benchmark_plots/
+*.out
+core
+core.*
+
+# Documentation
+*.pdf
+.doxygen/
