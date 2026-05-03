@@ -25,7 +25,7 @@ lu_cuda.cu            naive + tiled LU kernels
 lu_wmma.cu            panel-blocked mixed-precision LU with WMMA tensor cores
 Makefile              builds all four binaries in place
 run_benchmarks.sh     sweeps matrix sizes, writes benchmarks.csv
-sanity_check.sh       quick correctness check at N=256
+submit.sh             runs all necessary files to create results
 plot_results.py       reads benchmarks.csv, writes fig_*.png
 build_report.py       reads benchmarks.csv + fig_*.png, writes final_report.pdf
 final_report.pdf      the technical report (pre-run; placeholders for figures)
@@ -42,17 +42,6 @@ fig_lu_speedup.png
 fig_lu_cpu_speedup.png
 ```
 and `final_report.pdf` is rebuilt with the real numbers substituted in.
-
-## Build
-
-Requires CUDA Toolkit (tested against 11.x/12.x) and a GPU with compute capability >= 7.0 for WMMA.
-
-```bash
-make                      # builds all four binaries (cpu_solvers, jacobi_cuda, lu_cuda, lu_wmma)
-make SM=sm_80            # target Ampere
-```
-
-Individual targets: `make cpu`, `make jacobi`, `make lu`, `make wmma`.
 
 ## Run
 
@@ -73,14 +62,10 @@ Examples:
 ## Full reproduction
 
 ```bash
-make
-./sanity_check.sh              # optional: verifies each binary at N=256
-./run_benchmarks.sh            # writes benchmarks.csv
+sbatch submit.sh
 python3 plot_results.py        # writes fig_*.png
 python3 build_report.py        # rebuilds final_report.pdf with real numbers
 ```
-
-Size sweeps can be overridden, e.g. `SIZES_LU="512 1024 2048 4096" ./run_benchmarks.sh`.
 
 ## What to expect
 
