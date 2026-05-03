@@ -23,7 +23,6 @@ cpu_solvers.cpp       serial Jacobi + LU (baseline)
 jacobi_cuda.cu        naive + shared-memory Jacobi kernels + CUB reduction
 lu_cuda.cu            naive + tiled LU kernels
 lu_wmma.cu            panel-blocked mixed-precision LU with WMMA tensor cores
-Makefile              builds all four binaries in place
 run_benchmarks.sh     sweeps matrix sizes, writes benchmarks.csv
 submit.sh             runs all necessary files to create results
 plot_results.py       reads benchmarks.csv, writes fig_*.png
