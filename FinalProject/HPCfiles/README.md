@@ -65,7 +65,6 @@ These commands should be ran using Euler.
 ```bash
 sbatch submit.sh
 python3 plot_results.py        # writes fig_*.png
-python3 build_report.py        # rebuilds final_report.pdf with real numbers
 ```
 
 ## What to expect
