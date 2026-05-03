@@ -60,6 +60,8 @@ Examples:
 
 ## Full reproduction
 
+These commands should be ran using Euler.
+
 ```bash
 sbatch submit.sh
 python3 plot_results.py        # writes fig_*.png
