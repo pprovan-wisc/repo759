@@ -26,7 +26,6 @@ lu_wmma.cu            panel-blocked mixed-precision LU with WMMA tensor cores
 run_benchmarks.sh     sweeps matrix sizes, writes benchmarks.csv
 submit.sh             runs all necessary files to create results
 plot_results.py       reads benchmarks.csv, writes fig_*.png
-build_report.py       reads benchmarks.csv + fig_*.png, writes final_report.pdf
 final_report.pdf      the technical report (pre-run; placeholders for figures)
 README.md             this file
 ```
